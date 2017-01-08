@@ -7,12 +7,27 @@
     <link rel="stylesheet" type="text/css" href="./static/fish-css/bootstrap.min.css"/>
     <script src="./static/fish-js/jquery.min.js"></script>
     <script src="./static/fish-js/bootstrap.min.js"></script>
-    <script src="./static/fish-js/index.js"></script>
 
     <style type="text/css">
         body{
             background-image: url("./static/fish-image/fish-flag.jpg");
             background-size: cover;
+        }
+        .item {
+            background-color: #5bc0de;
+            width: 159px;
+            margin-bottom: 5px;
+            font-size: medium;
+            text-align: right;
+            font-family: 微软雅黑 !important;
+
+        }
+        .remove {
+            margin-left: 25px;
+        }
+        #list {
+            margin-top: 10px;
+            padding-left: 0;
         }
     </style>
 </head>
@@ -20,5 +35,18 @@
 <audio autoplay="autoplay" controls="controls" preload="auto"
        src="./static/fish-sound/默.mp3">
 </audio>
+<div class="container">
+    <div class="row">
+        <input title="time" id="time" name="time" type="text">
+        <button id="add" name="add" type="button">Add</button>
+    </div>
+    <div>
+        <ul id="list">
+            <!--<button class="remove" type="button"> x </button>-->
+        </ul>
+    </div>
+</div>
 </body>
+
+    <script src="./static/fish-js/index.js"></script>
 </html>
