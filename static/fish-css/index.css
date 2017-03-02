@@ -1,0 +1,38 @@
+.container {
+
+}
+
+#nav {
+    background-color: skyblue;
+    width: 21%;
+    height: 512px;
+    float: left;
+}
+
+#context {
+    background-color: lightgoldenrodyellow;
+    width: 78%;
+    height: 512px;
+    float: right;
+}
+
+img {
+    opacity: 0.6;
+}
+
+img:hover {
+    opacity: 1.0;
+}
+
+#logo{
+    text-align: center;
+    font-size: 2em;
+    font-family: 微软雅黑;
+}
+
+#items{
+    padding-top: 15px;
+    text-align: center;
+    font-size: 1.04em;
+    font-weight: bold;
+}

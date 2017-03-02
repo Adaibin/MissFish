@@ -2,51 +2,37 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>花且有香</title>
+    <title>-斯.鱼-</title>
     <link type="image" href="./static/fish-image/fish.png"/>
     <link rel="stylesheet" type="text/css" href="./static/fish-css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="./static/fish-css/index.css">
+
     <script src="./static/fish-js/jquery.min.js"></script>
     <script src="./static/fish-js/bootstrap.min.js"></script>
-
-    <style type="text/css">
-        body{
-            background-image: url("./static/fish-image/fish-flag.jpg");
-            background-size: cover;
-        }
-        .item {
-            background-color: #5bc0de;
-            width: 159px;
-            margin-bottom: 5px;
-            font-size: medium;
-            text-align: right;
-            font-family: 微软雅黑 !important;
-
-        }
-        .remove {
-            margin-left: 25px;
-        }
-        #list {
-            margin-top: 10px;
-            padding-left: 0;
-        }
-    </style>
 </head>
 <body>
-<audio autoplay="autoplay" controls="controls" preload="auto"
-       src="./static/fish-sound/默.mp3">
-</audio>
+
 <div class="container">
-    <div class="row">
-        <input title="time" id="time" name="time" type="text">
-        <button id="add" name="add" type="button">Add</button>
+    <div id="nav">
+        <div id="logo">
+            <img src="./static/fish-image/miss-fish.jpg" width="100%" height="28%">
+            <label id="site-name">——斯.鱼——</label>
+        </div>
+
+        <div id="items">
+            <ul class="nav nav-stacked">
+                <li role="presentation"><a href="#">————— 2017 —————</a></li>
+                <li role="presentation"><a href="#">————— 2016 —————</a></li>
+                <li role="presentation"><a href="#">————— 2015 —————</a></li>
+                <li role="presentation"><a href="#">————— 2014 —————</a></li>
+                <li role="presentation"><a href="#">————— 2013 —————</a></li>
+                <li role="presentation"><a href="#">————— 2012 —————</a></li>
+            </ul>
+        </div>
     </div>
-    <div>
-        <ul id="list">
-            <!--<button class="remove" type="button"> x </button>-->
-        </ul>
+    <div id="context">
     </div>
 </div>
 </body>
-
-    <script src="./static/fish-js/index.js"></script>
+<script src="./static/fish-js/index.js"></script>
 </html>
