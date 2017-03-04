@@ -1,18 +1,19 @@
 .container {
-
+    height: 100%;
 }
 
 #nav {
+    position: relative;
     background-color: skyblue;
     width: 21%;
-    height: 512px;
+    height: auto;
     float: left;
 }
 
 #context {
     background-color: lightgoldenrodyellow;
     width: 78%;
-    height: 512px;
+    /*height: auto;*/
     float: right;
 }
 
@@ -28,7 +29,8 @@
     font-size: 0.91em;
     margin-bottom: 0;
 }
-hr{
+
+hr {
     margin-top: 2px;
     margin-bottom: 2px;
 }
@@ -40,23 +42,32 @@ hr{
     margin-bottom: 3px;
 }
 
-.text{
+.text {
     font-size: 0.95em;
-    text-indent:2em;
+    text-indent: 2em;
 }
 
 img {
-    opacity: 0.6;
+    opacity: 0.78;
 }
 
 img:hover {
-    opacity: 1.0;
+    opacity: 1;
 }
 
 #logo {
     text-align: center;
-    font-size: 2em;
     font-family: 微软雅黑;
+
+}
+
+#site-name {
+    font-size: 2em;
+    margin-bottom: 0;
+}
+#moto {
+    font-size: 1em;
+    margin-bottom: 0;
 }
 
 #items {
