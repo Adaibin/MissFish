@@ -47,6 +47,12 @@ hr {
     text-indent: 2em;
 }
 
+.comment {
+    margin-bottom: 0;
+    font-size: 0.8em;
+    text-indent: 3em;
+}
+
 img {
     opacity: 0.78;
 }
