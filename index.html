@@ -33,6 +33,20 @@
     </div>
     <div id="context">
         <div class="dairy">
+            <p class="date">2017.03.10 16:34 阴天</p>
+            <p class="sumary">时光未老，理想还在。</p>
+            <p class="text">昨天学到了两个template language的有意思用法。
+                一个是set，一个是super()。
+            </p>
+            <p class="text">
+                set是在模板中对变量赋值(不存在则创建)，这个变量可被导出到其子模板使用，也可导入到父模板使用
+                : {% set path = [('/user_index', '用户管理'), ('/user_edit', '编辑用户')] %}。
+            </p>
+            <p class="text">super() 调用父级块的内容来渲染，这会返回父级块的结果: {% block body %}{{ super() }}{% endblock %}。
+            </p>
+        </div>
+
+        <div class="dairy">
             <p class="date">2017.03.08 15:06 晴天</p>
             <p class="sumary">换一种思路，试试没点过的按钮。</p>
             <p class="text">用了这些年的Pycharm，一直安逸于local debug and remote deploy的方式，
