@@ -32,6 +32,32 @@
         </div>
     </div>
     <div id="context">
+
+        <div class="dairy">
+            <p class="date">2017.04.13 15:56 晴天</p>
+            <p class="sumary">灵光。</p>
+            <p class="sumary">多字段范围的简单查询之字典实现</p>
+            <p class="text">
+                首先定义查询字典: index_dict = {'name': Application.name.__eq__,
+            </p>
+            <p class="text">
+                -----------------------------'port': Application.port.__eq__,
+            </p>
+            <p class="text">
+                -----------------------------'process_': Application.process_.contains}
+            </p>
+            <p class="text">
+                然后就是WtForm的查询方法: cp = index_dict[self.field.data](value)
+            </p>
+            <p class="text">
+                -----------------------rows = current_session.query(Application).filter(cp).all()
+                return rows
+            </p>
+            <p class="text">
+                -----------------------return rows
+            </p>
+        </div>
+
         <div class="dairy">
             <p class="date">2017.03.31 16:07 阴天</p>
             <p class="sumary">五味杂陈。</p>
