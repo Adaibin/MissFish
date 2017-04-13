@@ -40,20 +40,20 @@
                 首先定义查询字典: index_dict = {'name': Application.name.__eq__,
             </p>
             <p class="text">
-                -------------------------------------'port': Application.port.__eq__,
+                --------------------------------------------'port': Application.port.__eq__,
             </p>
             <p class="text">
-                -------------------------------------'process_': Application.process_.contains}
+                --------------------------------------------'process_': Application.process_.contains}
             </p>
             <p class="text">
                 然后就是WtForm的查询方法: cp = index_dict[self.field.data](value)
             </p>
             <p class="text">
-                -------------------------------rows = current_session.query(Application).filter(cp).all()
+                ----------------------------------------rows = current_session.query(Application).filter(cp).all()
                 return rows
             </p>
             <p class="text">
-                -------------------------------return rows
+                ----------------------------------------return rows
             </p>
         </div>
         <div class="dairy">
