@@ -40,16 +40,28 @@
             </p>
             <p class="text">
                 locker = Lock()
-                <br/>
+            </p>
+            <p class="text">
                 locker.acquire()
+            </p>
+            <p class="text">
                 time.sleep(1)
+            </p>
+            <p class="text">
                 locker.release()
+            </p>
+            <p class="text">
                 线程访问未被释放的锁时会被阻塞, 直到该锁被别的线程释放.
             </p>
             <p class="text">
-                threading模块还提供一个Semaphore, Semaphore接受一个阀值, 当在线程中acquire()时,
+                threading模块还提供一个Semaphore:
+            </p>
+            <p class="text">
+                Semaphore接受一个阀值, 当在线程中acquire()时,
                 Semaphore对象的阀值会自减, 减至零时, 其它线程再来acquire()则该线程被阻塞挂起, 直到别的线程对
                 Semaphore对象进行release()操作(阀值自增)。
+            </p>
+            <p class="text">
                 Semaphore设置的阀值为1时, 和Lock的作用类似.
             </p>
         </div>
