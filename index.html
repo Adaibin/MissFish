@@ -33,6 +33,28 @@
     </div>
     <div id="context">
         <div class="dairy">
+            <p class="date">2017.04.26 10:45 雨天</p>
+            <p class="sumary">线程锁。</p>
+            <p class="text">
+                通过线程锁可以实现多线程共享资源的控制:
+            </p>
+            <p class="text">
+                locker = Lock()
+                <br/>
+                locker.acquire()
+                time.sleep(1)
+                locker.release()
+                线程访问未被释放的锁时会被阻塞, 直到该锁被别的线程释放.
+            </p>
+            <p class="text">
+                threading模块还提供一个Semaphore, Semaphore接受一个阀值, 当在线程中acquire()时,
+                Semaphore对象的阀值会自减, 减至零时, 其它线程再来acquire()则该线程被阻塞挂起, 直到别的线程对
+                Semaphore对象进行release()操作(阀值自增)。
+                Semaphore设置的阀值为1时, 和Lock的作用类似.
+            </p>
+        </div>
+
+        <div class="dairy">
             <p class="date">2017.04.13 15:56 晴天</p>
             <p class="sumary">灵光。</p>
             <p class="sumary">多字段范围的简单查询之字典实现</p>
