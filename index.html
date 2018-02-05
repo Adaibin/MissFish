@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>on</title>
+    <title>ILoveU</title>
     <link rel="shortcut icon" type="image" href="./static/fish-image/fish.png"/>
     <link rel="stylesheet" type="text/css" href="./static/fish-css/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="./static/fish-css/index.css">
@@ -11,8 +11,13 @@
     <script src="./static/fish-js/bootstrap.min.js"></script>
 </head>
 <script>
-    var myAuto = document.getElementById('audio');
-    myAuto.play();
+    document.addEventListener('DOMContentLoaded', function () {
+        function audioAutoPlay() {
+            var audio = document.getElementById('audio');
+            audio.play();
+        }
+        audioAutoPlay();
+    });
 </script>
 <body>
 <audio id="audio" src="./static/fish-voice/one.mp3" controls loop hidden autoplay="true"></audio>
@@ -38,7 +43,7 @@
     <div class="content-bd" style="text-align: right">
         <span class="a-image"><img src="./static/fish-image/5-20.jpg"></span>
         <h1>早安，美人鱼小姐</h1>
-        <h1>你先倒杯热水，再来慢慢看这几行字</h1>
+        <h1>你先倒杯热水，再来看这几行字</h1>
         <hr style=" height:3px;border:none;border-top:3px double #185598;"/><br>
         <h1>以前很羞涩</h1><br>
         <h1>慌于表达一直以来对你有想法</h1><br>
@@ -54,7 +59,7 @@
         <h1></h1><br>
         <h1></h1><br>
 
-        <h3>隐约雷鸣，阴霾天气，但盼雨来，留你我在此</h3><br>
+        <!--<h3>隐约雷鸣，阴霾天气，但盼雨来，留你我在此</h3><br>-->
         <!--<span id="article-img-0" class="a-image"><img src="//i1.go2yd.com/image.php?url=0IFZouwysX"></span>-->
         <!--<p>有个朋友，有个知己，</p>-->
         <!--<p>有个窝，有个伴，有点钱。</p>-->
