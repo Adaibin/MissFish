@@ -10,8 +10,12 @@
     <script src="./static/fish-js/jquery.min.js"></script>
     <script src="./static/fish-js/bootstrap.min.js"></script>
 </head>
+<script>
+    var myAuto = document.getElementById('audio');
+    myAuto.play();
+</script>
 <body>
-<audio src="./static/fish-voice/one.mp3" controls="controls" autoplay="autoplay" loop="loop"></audio>
+<audio id="audio" src="./static/fish-voice/one.mp3" controls loop hidden autoplay="true"></audio>
 <div class="container">
     <div id="nav">
         <!--<div id="logo">-->
