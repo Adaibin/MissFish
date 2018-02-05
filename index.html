@@ -10,16 +10,6 @@
     <script src="./static/fish-js/jquery.min.js"></script>
     <script src="./static/fish-js/bootstrap.min.js"></script>
 </head>
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        function audioAutoPlay() {
-            var audio = document.getElementById('audio');
-            audio.load();
-            audio.play();
-        }
-        audioAutoPlay();
-    });
-</script>
 <body>
 <audio id="audio" src="./static/fish-voice/one.mp3" controls loop hidden autoplay="true"></audio>
 <div class="container">
@@ -45,7 +35,8 @@
         <span class="a-image"><img src="./static/fish-image/5-20.jpg"></span>
         <h1>早安，美人鱼小姐</h1>
         <h1>你先倒杯热水，再来看这几行字</h1>
-        <hr style=" height:3px;border:none;border-top:3px double #185598;"/><br>
+        <hr style=" height:3px;border:none;border-top:3px double #185598;"/>
+        <br>
         <h1>以前很羞涩</h1><br>
         <h1>慌于表达一直以来对你有想法</h1><br>
         <br><br>
@@ -59,53 +50,53 @@
         <h1>想一直像现在这样，给你做饭为你送餐</h1><br>
         <h1></h1><br>
         <h1></h1><br>
-
-        <!--<h3>隐约雷鸣，阴霾天气，但盼雨来，留你我在此</h3><br>-->
-        <!--<span id="article-img-0" class="a-image"><img src="//i1.go2yd.com/image.php?url=0IFZouwysX"></span>-->
-        <!--<p>有个朋友，有个知己，</p>-->
-        <!--<p>有个窝，有个伴，有点钱。</p>-->
-        <!--<p>忘记年龄，忘记名利，</p>-->
-        <!--<p>忘记怨恨，忘记烦恼。</p>-->
-        <!--<p>健康第一，活得糊涂一点，</p>-->
-        <!--<p>活得潇洒一点，活得快乐一点。</p><span id="article-img-1" class="a-image"><img-->
-                <!--src="//i1.go2yd.com/image.php?url=0IFZouOvpx"></span>-->
-        <!--<p>我相信，纷扰的尘世间，总有两棵树，</p>-->
-        <!--<p>站成同样的姿势；</p>-->
-        <!--<p>总有两朵花，开出同样的芬芳；</p>-->
-        <!--<p>总有一座城，容纳同样的默契。</p>-->
-        <!--<p>总有一座老房子，能让我们遇到彼此。</p><span id="article-img-2" class="a-image"><img-->
-                <!--src="//i1.go2yd.com/image.php?url=0IFZouv8Y0"></span>-->
-        <!--<p>我们不知道这辈子能有多少倾心的相遇，</p>-->
-        <!--<p>所有的千回百转，或许只是命运的故意安排，</p>-->
-        <!--<p>目的就是为了能够遇到这样的你。</p><span id="article-img-3" class="a-image"><img-->
-                <!--src="//i1.go2yd.com/image.php?url=0IFZouTAhU"></span>-->
-        <!--<p>不期而遇是生命的美妙，</p>-->
-        <!--<p>细水长流才是真正的幸福。</p>-->
-        <!--<p>我们的匆匆一瞥，用瞬间的情愫惊艳了时光；</p>-->
-        <!--<p>而最深的陪伴，</p>-->
-        <!--<p>却用真情和温暖来铭记此生的幸福。</p><span id="article-img-4" class="a-image"><img-->
-                <!--src="//i1.go2yd.com/image.php?url=0IFZouaHAk"></span>-->
-        <!--<p>我愿与你择一城终老，</p>-->
-        <!--<p>看日月轮回四季交替，</p>-->
-        <!--<p>看烟火璀璨世间百态，</p>-->
-        <!--<p>看落花成雨岁月静好，</p>-->
-        <!--<p>看山高水长百转千回。</p><span id="article-img-5" class="a-image"><img-->
-                <!--src="//i1.go2yd.com/image.php?url=0IFZoudSVy"></span>-->
-        <!--<p>我们的陪伴淡若清风，</p>-->
-        <!--<p>不是浮在纸上的华丽，</p>-->
-        <!--<p>却能在岁月的素笺上</p>-->
-        <!--<p>种花，种草，种光阴。</p><span id="article-img-6" class="a-image"><img-->
-                <!--src="//i1.go2yd.com/image.php?url=0IFZou8HBB"></span>-->
-        <!--<p>年华老了，真情依旧。</p>-->
-        <!--<p>我们看过的风景，夕阳下的身影，</p>-->
-        <!--<p>淋过的烟雨，</p>-->
-        <!--<p>都被装帧在了岁月的相框里。</p><span id="article-img-7" class="a-image"><img src="//i1.go2yd.com/image.php?url=0IFZouZ4gX"></span>-->
-        <!--<p>正如有人说的：当我老了，</p>-->
-        <!--<p>眉眼低垂，鬓染风霜，</p>-->
-        <!--<p>唯你心中深藏着我的青春，仍那般葱茏。</p><span id="article-img-8" class="a-image"><img-->
-                <!--src="//i1.go2yd.com/image.php?url=0IFZour7oB"></span>-->
-        <!--<p>一辈子最幸福的事情真的莫过于此了，</p>-->
-        <!--<p>有个窝，有个伴，有点钱，这一生足矣！</p>-->
+    </div>
+    <!--<h3>隐约雷鸣，阴霾天气，但盼雨来，留你我在此</h3><br>-->
+    <!--<span id="article-img-0" class="a-image"><img src="//i1.go2yd.com/image.php?url=0IFZouwysX"></span>-->
+    <!--<p>有个朋友，有个知己，</p>-->
+    <!--<p>有个窝，有个伴，有点钱。</p>-->
+    <!--<p>忘记年龄，忘记名利，</p>-->
+    <!--<p>忘记怨恨，忘记烦恼。</p>-->
+    <!--<p>健康第一，活得糊涂一点，</p>-->
+    <!--<p>活得潇洒一点，活得快乐一点。</p><span id="article-img-1" class="a-image"><img-->
+    <!--src="//i1.go2yd.com/image.php?url=0IFZouOvpx"></span>-->
+    <!--<p>我相信，纷扰的尘世间，总有两棵树，</p>-->
+    <!--<p>站成同样的姿势；</p>-->
+    <!--<p>总有两朵花，开出同样的芬芳；</p>-->
+    <!--<p>总有一座城，容纳同样的默契。</p>-->
+    <!--<p>总有一座老房子，能让我们遇到彼此。</p><span id="article-img-2" class="a-image"><img-->
+    <!--src="//i1.go2yd.com/image.php?url=0IFZouv8Y0"></span>-->
+    <!--<p>我们不知道这辈子能有多少倾心的相遇，</p>-->
+    <!--<p>所有的千回百转，或许只是命运的故意安排，</p>-->
+    <!--<p>目的就是为了能够遇到这样的你。</p><span id="article-img-3" class="a-image"><img-->
+    <!--src="//i1.go2yd.com/image.php?url=0IFZouTAhU"></span>-->
+    <!--<p>不期而遇是生命的美妙，</p>-->
+    <!--<p>细水长流才是真正的幸福。</p>-->
+    <!--<p>我们的匆匆一瞥，用瞬间的情愫惊艳了时光；</p>-->
+    <!--<p>而最深的陪伴，</p>-->
+    <!--<p>却用真情和温暖来铭记此生的幸福。</p><span id="article-img-4" class="a-image"><img-->
+    <!--src="//i1.go2yd.com/image.php?url=0IFZouaHAk"></span>-->
+    <!--<p>我愿与你择一城终老，</p>-->
+    <!--<p>看日月轮回四季交替，</p>-->
+    <!--<p>看烟火璀璨世间百态，</p>-->
+    <!--<p>看落花成雨岁月静好，</p>-->
+    <!--<p>看山高水长百转千回。</p><span id="article-img-5" class="a-image"><img-->
+    <!--src="//i1.go2yd.com/image.php?url=0IFZoudSVy"></span>-->
+    <!--<p>我们的陪伴淡若清风，</p>-->
+    <!--<p>不是浮在纸上的华丽，</p>-->
+    <!--<p>却能在岁月的素笺上</p>-->
+    <!--<p>种花，种草，种光阴。</p><span id="article-img-6" class="a-image"><img-->
+    <!--src="//i1.go2yd.com/image.php?url=0IFZou8HBB"></span>-->
+    <!--<p>年华老了，真情依旧。</p>-->
+    <!--<p>我们看过的风景，夕阳下的身影，</p>-->
+    <!--<p>淋过的烟雨，</p>-->
+    <!--<p>都被装帧在了岁月的相框里。</p><span id="article-img-7" class="a-image"><img src="//i1.go2yd.com/image.php?url=0IFZouZ4gX"></span>-->
+    <!--<p>正如有人说的：当我老了，</p>-->
+    <!--<p>眉眼低垂，鬓染风霜，</p>-->
+    <!--<p>唯你心中深藏着我的青春，仍那般葱茏。</p><span id="article-img-8" class="a-image"><img-->
+    <!--src="//i1.go2yd.com/image.php?url=0IFZour7oB"></span>-->
+    <!--<p>一辈子最幸福的事情真的莫过于此了，</p>-->
+    <!--<p>有个窝，有个伴，有点钱，这一生足矣！</p>-->
 
     <!--<div id="context">-->
     <!--<div class="dairy">-->
@@ -452,6 +443,23 @@
 
     <!--&lt;!&ndash;</div>&ndash;&gt;-->
     <!--</div>-->
+</div>
+
 </body>
 <script src="./static/fish-js/index.js"></script>
+<script>
+    $(document).ready(function () {
+        function audioAutoPlay(id) {
+            var audio = document.getElementById(id),
+                    play = function () {
+                        audio.play();
+                        document.removeEventListener("touchstart", play, false);
+                    };
+            audio.play();
+            document.addEventListener("touchstart", play, false);
+        }
+
+        audioAutoPlay('audio');
+    })
+</script>
 </html>
