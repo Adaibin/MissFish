@@ -13,7 +13,7 @@
 <div class="container">
     <h2 style="text-align: right">The highlight researches in <strong><a target="_blank" href="https://www.natureasia.com/zh-cn">nature.com</a></strong></h2>
     <div class="content-bd" style="text-align: left">
-        {% for research in researches|sort(attribute="journal")|sort(attribute="title") %}
+        {% for research in researches|sort(attribute="title")|sort(attribute="journal") %}
             <a target="_blank"
                href="/static/pages/{{ research['id'] }}.html">{{ loop.index }}. {{ research['journal'] }}: {{ research['title'] }}</a>
             <br>
