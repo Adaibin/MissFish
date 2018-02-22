@@ -13,10 +13,12 @@ for file in files:
         f_ = f.read()
         title = f_[f_.find('title>')+6:f_.find('</title')]
         id_ = file[:-5]
+        journal = f_[f_.find('journal">')+9:]
+        journal = journal[:journal.find('<')]
         if title in titles:
             continue
         titles.append(title)
-        researches.append({'id': id_, 'title': title})
+        researches.append({'id': id_, 'title': title, 'journal': journal})
 
 with open(os.getcwd() + '/nature_.html', 'r') as f:
     template = Template(f.read())
@@ -24,5 +26,3 @@ with open(os.getcwd() + '/nature_.html', 'r') as f:
 
     with open(os.getcwd() + '/nature.html', 'w', encoding='utf-8') as wf:
         wf.write(nature)
-
-print(nature)
