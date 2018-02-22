@@ -11,7 +11,8 @@
 </head>
 <body>
 <div class="container">
-    <div class="content-bd" style="text-align: right">
+    <h2>The highlight researches in nature.com</h2>
+    <div class="content-bd" style="text-align: left">
         {% for research in researches|sort(attribute="title") %}
             <a target="_blank"
                href="/static/pages/{{ research['id'] }}.html">{{ loop.index }}. {{ research['title'] }}</a>
