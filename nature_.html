@@ -12,9 +12,9 @@
 <body>
 <div class="container">
     <div class="content-bd" style="text-align: right">
-        {% for research in researches %}
+        {% for research in researches|sort(attribute="title") %}
             <a target="_blank"
-               href="/static/pages/{{ research['id'] }}.html">{{ research['title'] }}</a>
+               href="/static/pages/{{ research['id'] }}.html">{{ loop.index }}. {{ research['title'] }}</a>
         {% endfor %}
     </div>
 </div>
