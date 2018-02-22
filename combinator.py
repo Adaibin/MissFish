@@ -1,13 +1,13 @@
 import os
+from datetime import datetime
 
 from jinja2 import Template
 
 
-researches = []
+researches = {}
 page_path = os.getcwd() + '/static/pages'
 files = os.listdir(page_path)
 
-titles = []
 for file in files:
     with open(page_path + '/' + file, 'r', encoding='utf-8') as f:
         f_ = f.read()
@@ -15,14 +15,21 @@ for file in files:
         id_ = file[:-5]
         journal = f_[f_.find('journal">')+9:]
         journal = journal[:journal.find('<')]
-        if title in titles:
-            continue
-        titles.append(title)
-        researches.append({'id': id_, 'title': title, 'journal': journal})
+
+        if journal not in researches:
+            researches[journal] = [{'id': id_,
+                                    'title': title,
+                                    'journal': journal}]
+        else:
+            researches[journal].append({'id': id_,
+                                        'title': title,
+                                        'journal': journal})
 
 with open(os.getcwd() + '/nature_.html', 'r') as f:
     template = Template(f.read())
-    nature = template.render(researches=researches)
+    date = datetime.now()
+    author = '唼喋'
+    nature = template.render(researches=researches, date=date, author=author)
 
     with open(os.getcwd() + '/nature.html', 'w', encoding='utf-8') as wf:
         wf.write(nature)

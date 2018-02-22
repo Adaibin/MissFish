@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <title>nature</title>
     <link rel="shortcut icon" type="image" href="./static/fish-image/fish.png"/>
     <link rel="stylesheet" type="text/css" href="./static/fish-css/bootstrap.min.css"/>
@@ -11,14 +11,40 @@
 </head>
 <body>
 <div class="container">
-    <h2 style="text-align: right">The highlight researches in <strong><a target="_blank" href="https://www.natureasia.com/zh-cn">nature.com</a></strong></h2>
+    <h2 style="text-align: center">The highlight researches in <strong>
+        <a target="_blank" href="https://www.natureasia.com/zh-cn">nature.com</a></strong>
+    </h2>
+    <h5 style="text-align: right">collect data in {{ date }} by {{ author }}.</h5>
     <div class="content-bd" style="text-align: left">
-        {% for research in researches|sort(attribute="title")|sort(attribute="journal") %}
-            <a target="_blank"
-               href="/static/pages/{{ research['id'] }}.html">{{ loop.index }}. {{ research['journal'] }}: {{ research['title'] }}</a>
-            <br>
-        {% endfor %}
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+            {% for journal in researches|sort %}
+            <div class="panel panel-warning">
+                <div class="panel-heading" role="tab" id="h-{{ loop.index }}">
+                    <h4 class="panel-title">
+                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#{{ loop.index }}"
+                           aria-expanded="true" aria-controls="{{ loop.index }}">
+                            <strong>{{ loop.index }}.{{ journal }}</strong>
+                        </a>
+                    </h4>
+                </div>
+                <div id="{{ loop.index }}" class="panel-collapse collapse in" role="tabpanel"
+                     aria-labelledby="h-{{ loop.index }}">
+                    <div class="panel-body">
+                        {% for research in researches[journal]|sort(attribute="title") %}
+                        <a target="_blank"
+                           href="/static/pages/{{ research['id'] }}.html">
+                            {{- loop.index }}. {{ research['title'] }}</a>
+                        <br>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
     </div>
 </div>
 </body>
+<script>
+    $('.collapse').collapse()
+</script>
 </html>
