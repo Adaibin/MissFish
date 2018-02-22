@@ -15,6 +15,7 @@
         {% for research in researches|sort(attribute="title") %}
             <a target="_blank"
                href="/static/pages/{{ research['id'] }}.html">{{ loop.index }}. {{ research['title'] }}</a>
+            <br>
         {% endfor %}
     </div>
 </div>
