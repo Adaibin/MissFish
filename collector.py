@@ -20,8 +20,8 @@ def get_(x):
 
 
 def func_(x):
-    if os.path.isfile(os.getcwd() + '/static/pages/%s.html' % x):
-        return False
+    # if os.path.isfile(os.getcwd() + '/static/pages/%s.html' % x):
+    #     return False
 
     resp = get_(x)
     if not resp:
@@ -64,7 +64,7 @@ def func_(x):
 resp_ = requests.get('https://www.natureasia.com/zh-cn/research/', timeout=5)
 ids = re.findall('"/zh\-cn/research/\S*/(\d{1,5})"', resp_.text)
 
-p = Pool(50)
+p = Pool(100)
 p.map(func_, ids)
 p.close()
 p.join()
