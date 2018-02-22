@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>nature</title>
+    <link rel="shortcut icon" type="image" href="./static/fish-image/fish.png"/>
+    <link rel="stylesheet" type="text/css" href="./static/fish-css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="./static/fish-css/index.css">
+    <script src="./static/fish-js/jquery.min.js"></script>
+    <script src="./static/fish-js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="content-bd" style="text-align: right">
+        {% for research in researches %}
+            <a target="_blank"
+               href="/static/pages/{{ research['id'] }}.html">{{ research['title'] }}</a>
+        {% endfor %}
+    </div>
+</div>
+</body>
+</html>
