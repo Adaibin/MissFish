@@ -6,26 +6,27 @@
     <link rel="shortcut icon" type="image" href="./static/fish-image/fish.png"/>
     <link rel="stylesheet" type="text/css" href="./static/fish-css/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="./static/fish-css/index.css">
+    <link rel="stylesheet" type="text/css" href="./static/fish-css/nature.css">
     <script src="./static/fish-js/jquery.min.js"></script>
     <script src="./static/fish-js/bootstrap.min.js"></script>
 </head>
 <body>
 <div class="container">
-    <h2 style="text-align: center">The highlight researches in <strong>
-        <a target="_blank" href="https://www.natureasia.com/zh-cn">nature.com</a></strong>
-    </h2>
-    <h5 style="text-align: right">collect data in {{ date }} by {{ author }}.</h5>
+    <strong><h1 style="text-align: center">The highlight researches in
+        <a target="_blank" href="https://www.natureasia.com/zh-cn">nature.com</a>
+    </h1></strong>
+    <h5 style="text-align: right">in {{ date }} by {{ author }}.</h5>
     <div class="content-bd" style="text-align: left">
         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
             {% for journal in researches|sort %}
             <div class="panel panel-warning">
                 <div class="panel-heading" role="tab" id="h-{{ loop.index }}">
-                    <h4 class="panel-title">
+                    <h1 class="panel-title">
                         <a role="button" data-toggle="collapse" data-parent="#accordion" href="#{{ loop.index }}"
                            aria-expanded="true" aria-controls="{{ loop.index }}">
                             <strong>{{ loop.index }}.{{ journal }}</strong>
                         </a>
-                    </h4>
+                    </h1>
                 </div>
                 <div id="{{ loop.index }}" class="panel-collapse collapse in" role="tabpanel"
                      aria-labelledby="h-{{ loop.index }}">

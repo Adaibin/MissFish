@@ -42,8 +42,9 @@ def func_(x):
     doi = re.findall('(doi:.*?)\|', resp.text)
     doi = doi[0] if doi else doi
 
-    link = re.findall('href="(.*?)">原创文章</a>', resp.text)
-    link = link[0] if link else link
+    # link = re.findall('href="(.*?)">原创文章</a>', resp.text)
+    # link = link[0] if link else link
+    link = resp.url
 
     if not hl:
         print(x, 'no hl')
