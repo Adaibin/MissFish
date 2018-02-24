@@ -483,7 +483,8 @@
                     {id: 0, action: 'jobcategoryjson'},
                     function (resp) {
                         if (resp.errcode) {
-                            alert(resp.errcode);
+                            alert(resp[0].pid);
+                            alert(resp[0].items[0]._name);
                             return false;
                         }
 //                else {
