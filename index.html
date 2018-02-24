@@ -481,10 +481,9 @@
             var token_url = 'https://qyapi.weixin.qq.com/cgi-bin/gettoken?corpid=wx7cc2586b6e9016a7&corpsecret=jTleq3LLvrz0ovJllHcLJMDDPP2-I4faj5JyGoYf9IQ&jsoncallback=?';
             $.getJSON(token_url,
                     {id: 0, action: 'jobcategoryjson'},
-                    function (resp) {
-
-                            alert(resp[0].pid);
-                            alert(resp[0].items[0]._name);
+                    function (json) {
+                            alert(json[0].pid);
+                            alert(json[0].items[0]._name);
                             return false;
 
 //                else {
