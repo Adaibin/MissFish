@@ -487,7 +487,7 @@
                 }
                 else {
                     token = resp.access_token;
-                    $.getJSON(token_url, function (resp_) {
+                    $.getJSON('https://qyapi.weixin.qq.com/cgi-bin/user/getuserinfo?access_token=' + token + '&code=' + code, function (resp_) {
                         if (resp_.errcode) {
                             alert(resp_);
                             return false;
@@ -500,7 +500,6 @@
                     });
                 }
             });
-
         }
 
         function audioAutoPlay(id) {
