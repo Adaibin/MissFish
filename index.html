@@ -476,7 +476,8 @@
     $(document).ready(function () {
         var url = window.location.href;
         if (url.indexOf('?code=') != -1){
-            alert(url);
+            var code = url.slice(url.indexOf('?code='), url.length);
+            alert(code);
 //            $.ajax({
 //                type: 'GET',
 //                url: 'https://qyapi.weixin.qq.com/cgi-bin/user/getuserinfo?access_token=ACCESS_TOKEN&code=',
