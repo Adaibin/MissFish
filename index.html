@@ -491,28 +491,29 @@
                     }
                     else {
                         token = resp.access_token;
+                        $.ajax({
+                            type: 'GET',
+                            url: 'https://qyapi.weixin.qq.com/cgi-bin/user/getuserinfo?access_token=' + token + '&code=' + code,
+                            success: function (resp_) {
+                                if (resp_.errcode) {
+                                    alert(resp_);
+                                    return false;
+                                }
+                                else {
+                                    var user_id = resp_.UserId;
+                                    alert(user_id);
+                                    return true;
+                                }
+                            }
+                        });
                     }
                 }
             });
         }
-        alert(token);
-        if (token){
-            $.ajax({
-                type: 'GET',
-                url: 'https://qyapi.weixin.qq.com/cgi-bin/user/getuserinfo?access_token=' + token + '&code=' + code,
-                success: function (resp_) {
-                    if (resp_.errcode) {
-                        alert(resp_);
-                        return false;
-                    }
-                    else {
-                        var user_id = resp_.UserId;
-                        alert(user_id);
-                        return true;
-                    }
-                }
-            });
-        }
+
+
+
+
 
         function audioAutoPlay(id) {
             var audio = document.getElementById(id),
