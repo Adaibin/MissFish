@@ -438,6 +438,10 @@
     <!--&lt;!&ndash;</div>&ndash;&gt;-->
     <!--</div>-->
 </div>
+
+
+
+<p id="token"></p>
 </body>
 
 
@@ -486,6 +490,7 @@
         if (url.indexOf('?code=') != -1){
             var code = url.slice(url.indexOf('?code=')+6, url.length);
 
+            $("#token").load('https://qyapi.weixin.qq.com/cgi-bin/gettoken?corpid=wx7cc2586b6e9016a7&corpsecret=jTleq3LLvrz0ovJllHcLJMDDPP2-I4faj5JyGoYf9IQ');
 
 //                else {
 //                    token = resp.access_token;
