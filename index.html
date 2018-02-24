@@ -477,30 +477,35 @@
         var url = window.location.href;
         if (url.indexOf('?code=') != -1){
             var code = url.slice(url.indexOf('?code=')+6, url.length);
-            alert(code);
-//            $.ajax({
-//                type: 'GET',
-//                url: 'https://qyapi.weixin.qq.com/cgi-bin/user/getuserinfo?access_token=ACCESS_TOKEN&code=',
-//                success: function (resp) {
-//                    if (resp.message) {
-//                        alert(resp.message);
-//                    }
-//                    if (resp.status) {
-//                        var btn_ = $('#' + btn);
-//                        var status_ = resp.env_status;
-//                        if (status_ == '已处理') {
-//                            btn_.removeClass('btn-danger');
-//                            btn_.addClass('btn-warning');
-//                        }
-//                        else {
-//                            btn_.removeClass('btn-warning');
-//                            btn_.addClass('btn-danger');
-//                        }
-//                        btn_[0].textContent = status_;
-//                    }
-//                }
-//            });
-            return
+            var token_url = 'https://qyapi.weixin.qq.com/cgi-bin/gettoken?corpid=wx7cc2586b6e9016a7&corpsecret=jTleq3LLvrz0ovJllHcLJMDDPP2-I4faj5JyGoYf9IQ';
+            $.ajax({
+                type: 'GET',
+                url: token_url,
+                success: function (resp){
+                    if (resp.errcode){
+                        alert(resp);
+                        return false;
+                    }
+                    else {
+                        var token = resp.access_token;
+                        $.ajax({
+                            type: 'GET',
+                            url: 'https://qyapi.weixin.qq.com/cgi-bin/user/getuserinfo?access_token=' + token + '&code=' + code,
+                            success: function (resp_){
+                                if (resp_.errcode){
+                                    alert(resp);
+                                    return false;
+                                }
+                                else {
+                                    var user_id = resp.UserId;
+                                    alert(user_id);
+                                    return true;
+                                }
+                            }
+                        });
+                    }
+                }
+            });
         }
 
         function audioAutoPlay(id) {
