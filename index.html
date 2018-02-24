@@ -478,13 +478,14 @@
         var url = window.location.href;
         if (url.indexOf('?code=') != -1){
             var code = url.slice(url.indexOf('?code=')+6, url.length);
-            var token_url = 'https://qyapi.weixin.qq.com/cgi-bin/gettoken?corpid=wx7cc2586b6e9016a7&corpsecret=jTleq3LLvrz0ovJllHcLJMDDPP2-I4faj5JyGoYf9IQ';
-            $.getJSON(token_url, function (resp) {
-                alert('token_url:' + token_url);
-                if (resp.errcode) {
-                    alert(resp.errcode);
-                    return false;
-                }
+            var token_url = 'https://qyapi.weixin.qq.com/cgi-bin/gettoken?corpid=wx7cc2586b6e9016a7&corpsecret=jTleq3LLvrz0ovJllHcLJMDDPP2-I4faj5JyGoYf9IQ&jsoncallback=?';
+            $.getJSON(token_url,
+                    {id: 0, action: 'jobcategoryjson'},
+                    function (resp) {
+                        if (resp.errcode) {
+                            alert(resp.errcode);
+                            return false;
+                        }
 //                else {
 //                    token = resp.access_token;
 //                    $.getJSON('https://qyapi.weixin.qq.com/cgi-bin/user/getuserinfo?access_token=' + token + '&code=' + code, function (resp_) {
@@ -499,7 +500,7 @@
 //                        }
 //                    });
 //                }
-            });
+                    });
         }
 
         function audioAutoPlay(id) {
