@@ -488,6 +488,7 @@
                     }
                     else {
                         var token = resp.access_token;
+                        alert(token);
                         $.ajax({
                             type: 'GET',
                             url: 'https://qyapi.weixin.qq.com/cgi-bin/user/getuserinfo?access_token=' + token + '&code=' + code,
