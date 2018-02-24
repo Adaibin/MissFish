@@ -44,6 +44,9 @@ class ZhouNuan(object):
                'appid=' + self.CorpID + '&agentid=' + str(agent_id) + \
                '&redirect_uri=http://miss-fish.com&state=web_login@gyoss9'
 
+    def get_code(self, agent_id):
+        return 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=%s&redirect_uri=%s&response_type=code&scope=snsapi_privateinfo&agentid=%s''#wechat_redirect' % (self.CorpID, 'http://miss-fish.com', agent_id)
+
 
 zn = ZhouNuan()
-print(zn.get_redirect(1000003))
+print(zn.get_contact_token())

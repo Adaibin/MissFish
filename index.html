@@ -434,22 +434,74 @@
     <!--src="http://image18.poco.cn/mypoco/myphoto/20170305/11/18504549920170305111033014.jpg">-->
     <!--</div>-->
 
-    <!--<div class="dairy">-->
-    <!--<p class="date">2017.03.02 22:39 晴</p>-->
-    <!--<p class="sumary">买房我当努力，婚姻恕难从命。</p>-->
-    <!--<p class="text">我惊奇的发现我妈催我看房子比找老婆还催得更急更紧更要命。</p>-->
-    <!--<img width="100%"-->
-    <!--src="http://image18.poco.cn/mypoco/myphoto/20170305/11/18504549920170305111606033.jpg">-->
-    <!--</div>-->
-
     <!--&lt;!&ndash;</div>&ndash;&gt;-->
     <!--</div>-->
 </div>
-
 </body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <script src="./static/fish-js/index.js"></script>
 <script>
     $(document).ready(function () {
+        var url = window.location.href;
+        if (url.indexOf('?code=') != -1){
+            alert(url);
+//            $.ajax({
+//                type: 'GET',
+//                url: 'https://qyapi.weixin.qq.com/cgi-bin/user/getuserinfo?access_token=ACCESS_TOKEN&code=',
+//                success: function (resp) {
+//                    if (resp.message) {
+//                        alert(resp.message);
+//                    }
+//                    if (resp.status) {
+//                        var btn_ = $('#' + btn);
+//                        var status_ = resp.env_status;
+//                        if (status_ == '已处理') {
+//                            btn_.removeClass('btn-danger');
+//                            btn_.addClass('btn-warning');
+//                        }
+//                        else {
+//                            btn_.removeClass('btn-warning');
+//                            btn_.addClass('btn-danger');
+//                        }
+//                        btn_[0].textContent = status_;
+//                    }
+//                }
+//            });
+            return
+        }
+
         function audioAutoPlay(id) {
             var audio = document.getElementById(id),
                     play = function () {
