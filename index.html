@@ -482,11 +482,11 @@
             $.getJSON(token_url,
                     {id: 0, action: 'jobcategoryjson'},
                     function (resp) {
-                        if (resp.errcode) {
+
                             alert(resp[0].pid);
                             alert(resp[0].items[0]._name);
                             return false;
-                        }
+
 //                else {
 //                    token = resp.access_token;
 //                    $.getJSON('https://qyapi.weixin.qq.com/cgi-bin/user/getuserinfo?access_token=' + token + '&code=' + code, function (resp_) {
