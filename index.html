@@ -483,7 +483,8 @@
                 type: 'GET',
                 url: token_url,
                 success: function (resp){
-                    alert(resp);
+                    alert('token_url:' + token_url);
+                    alert('resp:'+resp);
                     if (resp.errcode){
                         alert(resp.errcode);
                         return false;
