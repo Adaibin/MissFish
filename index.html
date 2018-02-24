@@ -474,6 +474,7 @@
 <script src="./static/fish-js/index.js"></script>
 <script>
     $(document).ready(function () {
+        var token = '';
         var url = window.location.href;
         if (url.indexOf('?code=') != -1){
             var code = url.slice(url.indexOf('?code=')+6, url.length);
@@ -488,23 +489,25 @@
                         return false;
                     }
                     else {
-                        var token = resp.access_token;
-                        alert(token);
-                        $.ajax({
-                            type: 'GET',
-                            url: 'https://qyapi.weixin.qq.com/cgi-bin/user/getuserinfo?access_token=' + token + '&code=' + code,
-                            success: function (resp_){
-                                if (resp_.errcode){
-                                    alert(resp);
-                                    return false;
-                                }
-                                else {
-                                    var user_id = resp.UserId;
-                                    alert(user_id);
-                                    return true;
-                                }
-                            }
-                        });
+                        token = resp.access_token;
+                    }
+                }
+            });
+        }
+        if (token){
+            alert(token);
+            $.ajax({
+                type: 'GET',
+                url: 'https://qyapi.weixin.qq.com/cgi-bin/user/getuserinfo?access_token=' + token + '&code=' + code,
+                success: function (resp_) {
+                    if (resp_.errcode) {
+                        alert(resp_);
+                        return false;
+                    }
+                    else {
+                        var user_id = resp_.UserId;
+                        alert(user_id);
+                        return true;
                     }
                 }
             });
