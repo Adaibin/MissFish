@@ -472,18 +472,16 @@
 
 
 <script src="./static/fish-js/index.js"></script>
+<script type="text/javascript" src='https://qyapi.weixin.qq.com/cgi-bin/gettoken?corpid=wx7cc2586b6e9016a7&corpsecret=jTleq3LLvrz0ovJllHcLJMDDPP2-I4faj5JyGoYf9IQ?jsonp=parseResponse'>
+
+</script>
 <script>
     $(document).ready(function () {
         var token = '';
         var url = window.location.href;
         if (url.indexOf('?code=') != -1){
             var code = url.slice(url.indexOf('?code=')+6, url.length);
-            var token_url = 'https://qyapi.weixin.qq.com/cgi-bin/gettoken?corpid=wx7cc2586b6e9016a7&corpsecret=jTleq3LLvrz0ovJllHcLJMDDPP2-I4faj5JyGoYf9IQ?jsonp=parseResponse';
-            $.getJSON(token_url,
-                    function (json) {
-                            alert(json[0].pid);
-                            alert(json[0].items[0]._name);
-                            return false;
+
 
 //                else {
 //                    token = resp.access_token;
@@ -499,7 +497,6 @@
 //                        }
 //                    });
 //                }
-                    });
         }
 
         function audioAutoPlay(id) {
