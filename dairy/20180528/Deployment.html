@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Deployment</title>
+    <link rel="shortcut icon" type="image" href="../../static/fish-image/fish.png"/>
+    <link rel="stylesheet" type="text/css" href="../../static/fish-css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../../static/fish-css/index.css">
+
+    <script src="../../static/fish-js/jquery.min.js"></script>
+    <script src="../../static/fish-js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <div id="nav" hidden>
+
+    </div>
+    <div class="content-bd" style="text-align: left">
+        <br><strong><p style="font-size: 3em">Deployment</p></strong>
+        <br><h3>2018-05-28 16:18:53.588378</h3><br><br>
+        
+                <h1>deploy django(sqlite) application with Nginx, gunicon and gevent
+</h1><br>
+            
+                <h1>
+</h1><br>
+            
+                <h1>install:
+</h1><br>
+            
+                <h1>pip install gunicon
+</h1><br>
+            
+                <h1>pip install gevent
+</h1><br>
+            
+                <h1>yum install nginx
+</h1><br>
+            
+                <h1>
+</h1><br>
+            
+                <h1>config:
+</h1><br>
+            
+                <h1>1) 将项目目录放入环境变量PATH
+</h1><br>
+            
+                <h1>vi /etc/profile
+</h1><br>
+            
+                <h1>export PATH="$PATH:/mnt/SlwSiteOriginal
+</h1><br>
+            
+                <h1>source /etc/profile
+</h1><br>
+            
+                <h1>
+</h1><br>
+            
+                <h1>2) 修改sqlite线程共享
+</h1><br>
+            
+                <h1>vi /usr/local/lib/python3.5/site-packages/django/db/backends/base/base.py
+</h1><br>
+            
+                <h1>line 46-47:
+</h1><br>
+            
+                <h1>def __init__(self, settings_dict, alias=DEFAULT_DB_ALIAS,
+</h1><br>
+            
+                <h1>             allow_thread_sharing=True):
+</h1><br>
+            
+                <h1>
+</h1><br>
+            
+                <h1>3) 配置Nginx
+</h1><br>
+            
+                <h1>vi /etc/nginx/nginx.conf:
+</h1><br>
+            
+                <h1>server {
+</h1><br>
+            
+                <h1>        listen       9755;
+</h1><br>
+            
+                <h1>        server_name  118.126.104.198;
+</h1><br>
+            
+                <h1>
+</h1><br>
+            
+                <h1>        charset utf-8;
+</h1><br>
+            
+                <h1>
+</h1><br>
+            
+                <h1>        access_log  /var/log/nginx/access.log;
+</h1><br>
+            
+                <h1>        error_log  /var/log/nginx/error.log;
+</h1><br>
+            
+                <h1>        access_log  /var/log/nginx/access.log;
+</h1><br>
+            
+                <h1>
+</h1><br>
+            
+                <h1>        location /static {
+</h1><br>
+            
+                <h1>            alias /mnt/SlwSiteOriginal/SlwSite/static;
+</h1><br>
+            
+                <h1>        }
+</h1><br>
+            
+                <h1>
+</h1><br>
+            
+                <h1>        location / {
+</h1><br>
+            
+                <h1>            proxy_pass         http://0.0.0.0:8000/;
+</h1><br>
+            
+                <h1>            proxy_redirect     off;
+</h1><br>
+            
+                <h1>
+</h1><br>
+            
+                <h1>            proxy_set_header   Host                 $host;
+</h1><br>
+            
+                <h1>            proxy_set_header   X-Real-IP            $remote_addr;
+</h1><br>
+            
+                <h1>            proxy_set_header   X-Forwarded-For      $proxy_add_x_forwarded_for;
+</h1><br>
+            
+                <h1>            proxy_set_header   X-Forwarded-Proto    $scheme;
+</h1><br>
+            
+                <h1>        }
+</h1><br>
+            
+                <h1>}
+</h1><br>
+            
+                <h1>
+</h1><br>
+            
+                <h1>run:
+</h1><br>
+            
+                <h1>1) nginx
+</h1><br>
+            
+                <h1>nginx -c /etc/nginx/nginx.conf
+</h1><br>
+            
+                <h1>nginx -s reload
+</h1><br>
+            
+                <h1>
+</h1><br>
+            
+                <h1>2) gunicon
+</h1><br>
+            
+                <h1>gunicorn --worker-class=gevent SlwSite.wsgi:application
+</h1><br>
+            
+                <h1>
+</h1><br>
+            
+                <h1>
+</h1><br>
+            
+                <h1>reference:
+</h1><br>
+            
+                <h1>1) Deploy Flask with Proxy
+</h1><br>
+            
+                <h1>http://flask.pocoo.org/docs/1.0/deploying/wsgi-standalone/#deploying-proxy-setups
+</h1><br>
+            
+                <h1>2) Django database connection’s thread-locality
+</h1><br>
+            
+                <h1>https://docs.djangoproject.com/en/dev/releases/1.4/#database-connection-s-thread-locality
+</h1><br>
+            
+                <h1>3) deploy
+</h1><br>
+            
+                <h1>https://code.ziqiangxuetang.com/django/django-nginx-deploy.html
+</h1><br>
+            
+                <h1>4) gevent
+</h1><br>
+            
+                <h1>http://www.open-open.com/lib/view/open1405475790571.html
+</h1><br>
+            
+                <h1>http://www.open-open.com/lib/view/open1409705174822.html
+</h1><br>
+            
+                <h1>5) django优化
+</h1><br>
+            
+                <h1>https://blog.csdn.net/u011546806/article/details/45576669
+</h1><br>
+            
+                <h1>6) Sqlite线程安全
+</h1><br>
+            
+                <h1>https://blog.csdn.net/ssyyjj88/article/details/51065874
+</h1><br>
+            
+                <h1>https://www.sqlite.org/faq.html#q6
+</h1><br>
+            
+                <h1>https://www.sqlite.org/threadsafe.html</h1><br>
+            </div>
+</div>
+</body>
+
+
+
+<script src="../../static/fish-js/index.js"></script>
+
+<script>
+    $(document).ready(function () {
+        function audioAutoPlay(id) {
+            var audio = document.getElementById(id),
+                    play = function () {
+                        audio.play();
+                        document.removeEventListener("touchstart", play, false);
+                    };
+            audio.load();
+            audio.play();
+            document.addEventListener("touchstart", play, false);
+        }
+
+        audioAutoPlay('audio');
+    })
+</script>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ text.title }}</title>
+    <link rel="shortcut icon" type="image" href="../../static/fish-image/fish.png"/>
+    <link rel="stylesheet" type="text/css" href="../../static/fish-css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../../static/fish-css/index.css">
+
+    <script src="../../static/fish-js/jquery.min.js"></script>
+    <script src="../../static/fish-js/bootstrap.min.js"></script>
+</head>
+<body>
+{% if text.music %}
+<audio id="audio" src="./{{ text.music }}"
+       controls loop autoplay hidden></audio>
+{% endif %}
+<div class="container">
+    <div id="nav" hidden>
+
+    </div>
+    <div class="content-bd" style="text-align: right">
+        <br><strong><p style="font-size: 3em">{{text.title}}</p></strong>
+        <br><h3>{{ text.date }}</h3><br><br>
+        {% for image in text.images %}
+            <span class="a-image"><img style="width: 70%" src="./{{image}}"></span><br>
+        {% endfor %}
+        {%- for line in text.context -%}
+            {% if line %}
+                <h1>{{ line }}</h1><br>
+            {% else %}
+                <br>
+            {% endif %}
+        {%- endfor -%}
+    </div>
+</div>
+</body>
+
+
+
+<script src="../../static/fish-js/index.js"></script>
+
+<script>
+    $(document).ready(function () {
+        function audioAutoPlay(id) {
+            var audio = document.getElementById(id),
+                    play = function () {
+                        audio.play();
+                        document.removeEventListener("touchstart", play, false);
+                    };
+            audio.load();
+            audio.play();
+            document.addEventListener("touchstart", play, false);
+        }
+
+        audioAutoPlay('audio');
+    })
+</script>
+</html>
