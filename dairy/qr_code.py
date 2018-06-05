@@ -8,7 +8,7 @@ qr = qrcode.QRCode(version=7,
                    box_size=10,
                    border=30)
 
-qr.add_data('https://cn.vuejs.org/v2/guide/')
+qr.add_data('http://miss-fish.com/dairy/时雨.html')
 qr.make()
-img = qr.make_image(fill_color="white", back_color="blue")
-img.save(open('vue.png', 'wb'))
+img = qr.make_image(fill_color="black", back_color="white")
+img.save(open('时雨.png', 'wb'))
